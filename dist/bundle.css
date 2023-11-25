@@ -47,9 +47,13 @@ body {
 	cursor: pointer;
 }
 
-img {
-	width: 300px;
+.box img {
+	width: 100%;
 	height: 340px;
+	transition: 0.3s ease-in-out;
+}
+.boxes .box:hover img {
+	transform: scale(1.1);
 }
 
 .name {
@@ -314,9 +318,9 @@ h1 {
 }
 
 .mosaic-loader {
-	--cell-size: 34px;
-	--cell-spacing: 1px;
-	--border-width: 1px;
+	--cell-size: 70px;
+	--cell-spacing: 3px;
+	--border-width: 2px;
 	--cells: 4;
 	--total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
 	display: flex;
@@ -412,6 +416,53 @@ h1 {
 	}
 	100% {
 		background-color: transparent;
+	}
+}
+
+@media (max-width: 576px) {
+	.container {
+		display: grid;
+		place-items: center;
+	}
+	.btn {
+		width: 200px;
+		height: 50px;
+		border-radius: 20px;
+		margin-top: 10px;
+		font-size: 20px;
+	}
+
+	.box img {
+		width: 290px;
+		height: 290px;
+		transition: 0.3s ease-in-out;
+	}
+
+	.name {
+		position: absolute;
+		margin-top: 150px;
+	}
+	/* BOXES */
+
+	.boxes {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 5px;
+		/* display: grid; */
+		place-items: center;
+	}
+	.box {
+		text-align: center;
+		display: grid;
+		place-items: center !important;
+		width: 300px;
+		height: 300px;
+		border: 5px solid rgb(120, 115, 115);
+	}
+	h1 {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
 	}
 }
 
