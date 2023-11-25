@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 			const characters = getInfoFromApi.data.characters;
 
 			boxElms.forEach((item, idx) => {
-				const person = characters[Math.floor(Math.random() * 100)];
+				const person = characters[Math.floor(Math.random() * characters.length)];
 				const personImg = person.image;
 				const img = document.createElement("img");
 				img.src = personImg;
